@@ -1,12 +1,29 @@
-import { TableInput } from "./Home.style";
+import {
+  FormContainer,
+  FormInputContainer,
+  HomeContainer,
+  TableInput,
+  TableLabel,
+  Highlight,
+  Bar,
+} from "./Home.style";
+import DeliceLogo from "/Delice-circle.png";
 
 export default function Home() {
   return (
     <>
-      <h2>Enter table number:</h2>
-      <form>
-        <TableInput type="number" name="tableNumber" min="0" />
-      </form>
+      <HomeContainer>
+        <FormContainer>
+          <img src={DeliceLogo} alt="DeliceLogo"></img>
+          <br />
+          <FormInputContainer>
+            <TableInput type="number" min="0" />
+            <Highlight />
+            <Bar />
+            <TableLabel>Table Number</TableLabel>
+          </FormInputContainer>
+        </FormContainer>
+      </HomeContainer>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
-  height: 90px;
+  height: 150px;
   width: 100%;
   display: flex;
   /* background-color: #86796e; */
@@ -15,6 +15,7 @@ export const LogoContainer = styled.div`
 export const LogoImage = styled.img.attrs((props) => ({
   src: props.src,
 }))`
-  width: 120px;
+  width: 150px;
   height: inherit;
+  margin: 5px 5px;
 `;

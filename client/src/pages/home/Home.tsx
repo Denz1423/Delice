@@ -1,3 +1,4 @@
+import { useCallback, useState } from "react";
 import {
   FormContainer,
   FormInputContainer,
@@ -10,6 +11,13 @@ import {
 import DeliceLogo from "/Delice-circle.png";
 
 export default function Home() {
+  const [tableNumber, setTableNumber] = useState<number | undefined>(undefined);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleTableNumberChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setTableNumber(parseInt(e.target.value, 10));
+  }, []);
+
   return (
     <>
       <HomeContainer>
@@ -17,7 +25,13 @@ export default function Home() {
           <img src={DeliceLogo} alt="DeliceLogo"></img>
           <br />
           <FormInputContainer>
-            <TableInput type="number" min="0" />
+            <TableInput
+              required
+              type="number"
+              // pattern="[0-9]*"
+              value={tableNumber}
+              onChange={handleTableNumberChange}
+            />
             <Highlight />
             <Bar />
             <TableLabel>Table Number</TableLabel>

@@ -9,14 +9,17 @@ import {
   Bar,
 } from "./Home.style";
 import DeliceLogo from "/Delice-circle.png";
+import { HomeButton } from "../../components/button/Button.style";
 
 export default function Home() {
   const [tableNumber, setTableNumber] = useState<number | undefined>(undefined);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleTableNumberChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setTableNumber(parseInt(e.target.value, 10));
-  }, []);
+  const handleTableNumberChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setTableNumber(parseInt(e.target.value, 10));
+    },
+    []
+  );
 
   return (
     <>
@@ -28,7 +31,6 @@ export default function Home() {
             <TableInput
               required
               type="number"
-              // pattern="[0-9]*"
               value={tableNumber}
               onChange={handleTableNumberChange}
             />
@@ -36,6 +38,7 @@ export default function Home() {
             <Bar />
             <TableLabel>Table Number</TableLabel>
           </FormInputContainer>
+          <HomeButton>Next</HomeButton>
         </FormContainer>
       </HomeContainer>
     </>

@@ -3,15 +3,19 @@ import styled, { keyframes } from "styled-components";
 export const HomeContainer = styled.div`
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 `;
 
 export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #86796e;
   padding: 30px 30px;
   border-radius: 20px;
+
 `;
 
 export const FormInputContainer = styled.form`
@@ -24,6 +28,7 @@ export const FormInputContainer = styled.form`
 
 export const TableInput = styled.input`
   /* Remove the spinner for number inputs */
+  appearance: textfield;
   -moz-appearance: textfield; /* Firefox */
 
   /* WebKit/Blink browsers */
@@ -83,7 +88,7 @@ export const Highlight = styled.span`
   height: 60%;
   width: 100px;
   top: 25%;
-  left: 60;
+  /* left: 60; */
   pointer-events: none;
   opacity: 0.5;
 

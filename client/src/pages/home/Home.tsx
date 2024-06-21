@@ -1,4 +1,3 @@
-import { useCallback, useState } from "react";
 import {
   FormContainer,
   FormInputContainer,
@@ -10,35 +9,52 @@ import {
 } from "./Home.style";
 import DeliceLogo from "/Delice-circle.png";
 import { HomeButton } from "../../components/button/Button.style";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
+type FormInputs = {
+  tableNumber: number;
+};
 
 export default function Home() {
-  const [tableNumber, setTableNumber] = useState<number | undefined>(undefined);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormInputs>();
+  const navigate = useNavigate();
 
-  const handleTableNumberChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setTableNumber(parseInt(e.target.value, 10));
-    },
-    []
-  );
+  const onSubmit: SubmitHandler<FormInputs> = ({ tableNumber }) =>
+    navigate("/menu/" + tableNumber);
 
   return (
     <>
       <HomeContainer>
-        <FormContainer>
+        <FormContainer onSubmit={handleSubmit(onSubmit)}>
           <img src={DeliceLogo} alt="DeliceLogo"></img>
           <br />
           <FormInputContainer>
             <TableInput
-              required
               type="number"
-              value={tableNumber}
-              onChange={handleTableNumberChange}
+              required
+              {...register("tableNumber", {
+                required: "Please enter your table number",
+                min: {
+                  value: 1,
+                  message: "Table number does not exist (1-20 only)",
+                },
+                max: {
+                  value: 20,
+                  message: "Table number does not exist (1-20 only)",
+                },
+              })}
             />
             <Highlight />
             <Bar />
             <TableLabel>Table Number</TableLabel>
+            {errors.tableNumber && <p>{errors.tableNumber?.message}</p>}
           </FormInputContainer>
-          <HomeButton>Next</HomeButton>
+          <HomeButton type="submit">Next</HomeButton>
         </FormContainer>
       </HomeContainer>
     </>

@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
     element: <Error404 />,
   },
   {
-    path: "/menu",
+    path: "menu/:tableNumber",
     element: <Menu />,
   },
 ]);

@@ -3,22 +3,20 @@ import styled, { keyframes } from "styled-components";
 export const HomeContainer = styled.div`
   height: 100vh;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #86796e;
   padding: 30px 30px;
   border-radius: 20px;
-
 `;
 
-export const FormInputContainer = styled.form`
+export const FormInputContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,7 +86,6 @@ export const Highlight = styled.span`
   height: 60%;
   width: 100px;
   top: 25%;
-  /* left: 60; */
   pointer-events: none;
   opacity: 0.5;
 
@@ -100,7 +97,7 @@ export const Highlight = styled.span`
 export const Bar = styled.span`
   position: relative;
   display: block;
-  width: 200px;
+  width: 150px;
 
   &:before,
   &:after {
@@ -125,6 +122,6 @@ export const Bar = styled.span`
 
   ${TableInput}:focus ~ &:before,
   ${TableInput}:focus ~ &:after {
-    width: 50%;
+    width: 30%;
   }
 `;

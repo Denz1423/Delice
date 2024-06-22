@@ -83,9 +83,9 @@ const inputHighlighter = keyframes`
 
 export const Highlight = styled.span`
   position: absolute;
-  height: 60%;
+  height: 30px;
   width: 100px;
-  top: 25%;
+  top: 0;
   pointer-events: none;
   opacity: 0.5;
 

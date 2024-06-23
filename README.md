@@ -1,4 +1,4 @@
-![Delice](client/public/Delice.png) 
+![Delice](client/public/Delice-circle.png) 
 # Delice
 
 ## Expanding the ESLint configuration

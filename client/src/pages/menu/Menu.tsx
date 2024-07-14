@@ -1,10 +1,11 @@
 import Header from "../../components/header/Header";
+import { MenuContainer } from "./Menu.style";
 
 export default function Menu() {
   return (
-    <div>
+    <MenuContainer>
       <Header></Header>
       Menu
-    </div>
+    </MenuContainer>
   );
 }

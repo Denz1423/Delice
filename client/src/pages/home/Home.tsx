@@ -6,6 +6,7 @@ import {
   TableLabel,
   Highlight,
   Bar,
+  WhiteSpace,
 } from "./Home.style";
 import DeliceLogo from "/Delice-circle.png";
 import { HomeButton } from "../../components/button/Button.style";
@@ -28,7 +29,6 @@ export default function Home() {
     navigate("/menu/" + tableNumber);
 
   return (
-    <>
       <HomeContainer>
         <FormContainer onSubmit={handleSubmit(onSubmit)}>
           <img src={DeliceLogo} alt="DeliceLogo"></img>
@@ -54,9 +54,9 @@ export default function Home() {
             <TableLabel>Table Number</TableLabel>
             {errors.tableNumber && <p>{errors.tableNumber?.message}</p>}
           </FormInputContainer>
+          <WhiteSpace />
           <HomeButton type="submit">Next</HomeButton>
         </FormContainer>
       </HomeContainer>
-    </>
   );
 }

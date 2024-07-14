@@ -1,19 +1,23 @@
 import styled, { keyframes } from "styled-components";
 
 export const HomeContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #86796e;
+  /* background-color: #86796e; */
   padding: 30px 30px;
   border-radius: 20px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 15px;
+  }
 `;
 
 export const FormInputContainer = styled.div`
@@ -22,6 +26,10 @@ export const FormInputContainer = styled.div`
   align-items: center;
   position: relative;
   margin: 50px 20px;
+
+  @media only screen and (max-width: 600px) {
+    margin: 15px 5px;
+  }
 `;
 
 export const TableInput = styled.input`
@@ -40,14 +48,20 @@ export const TableInput = styled.input`
   color: #f8f3ed;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 250px;
+  width: 110px;
   border: none;
   background: transparent;
   text-align: center;
+  cursor: pointer;
 
   &:focus {
     outline: none;
     text-align: center;
+    cursor: default;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 14px;
   }
 `;
 
@@ -68,6 +82,10 @@ export const TableLabel = styled.label`
     top: -20px;
     font-size: 14px;
     color: #f8f3ed;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding-bottom: 10px;
   }
 `;
 
@@ -125,3 +143,7 @@ export const Bar = styled.span`
     width: 30%;
   }
 `;
+
+export const WhiteSpace = styled.span`
+  margin: 5px;
+`

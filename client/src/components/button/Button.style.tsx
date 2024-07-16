@@ -42,3 +42,19 @@ export const HomeButton = styled.button`
     transform: translateY(0);
   }
 `;
+
+export const ProductCardButton = styled.button`
+  background-color: #423124;
+  width: 100px;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  outline: 0;
+  border: 0;
+  margin: 10px 0px;
+  cursor: pointer;
+  transition: ease background-color 250ms;
+  &:hover {
+    background-color: #f8f3ed;
+  }
+`;

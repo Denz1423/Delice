@@ -3,8 +3,10 @@ import { ProductCardButton } from "../button/Button.style";
 import {
   CardContainer,
   CardFooter,
-  CardImageContainer,
+  CardImage,
+  CardInformation,
   CardName,
+  CardPrice,
 } from "./Card.style";
 
 interface Props {
@@ -14,11 +16,13 @@ interface Props {
 export default function Card({ product }: Props) {
   return (
     <CardContainer>
-      <CardImageContainer src={product.pictureUrl} alt={product.name} />
-      <CardName>{product.name}</CardName>
+      <CardImage src={product.pictureUrl} alt={product.name} />
+      <CardInformation>
+        <CardName>{product.name}</CardName>
+        <CardPrice>${product.price}</CardPrice>
+      </CardInformation>
       <CardFooter>
-        ${product.price}
-        <ProductCardButton>Add to cart</ProductCardButton>
+        <ProductCardButton>Add item</ProductCardButton>
       </CardFooter>
     </CardContainer>
   );

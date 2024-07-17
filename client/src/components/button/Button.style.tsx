@@ -48,13 +48,14 @@ export const ProductCardButton = styled.button`
   width: 100px;
   color: white;
   padding: 5px 15px;
-  border-radius: 5px;
-  outline: 0;
+  border-radius: 10px;
   border: 0;
   margin: 10px 0px;
   cursor: pointer;
   transition: ease background-color 250ms;
+  font-size: 16px;
   &:hover {
-    background-color: #f8f3ed;
+    transform: scale(1.2);
+    transition: 0.2s ease all;
   }
 `;

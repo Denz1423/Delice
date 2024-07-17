@@ -11,7 +11,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: #86796e; */
+  background-color: #86796e;
   padding: 30px 30px;
   border-radius: 20px;
 
@@ -146,4 +146,4 @@ export const Bar = styled.span`
 
 export const WhiteSpace = styled.span`
   margin: 5px;
-`
+`;

@@ -9,6 +9,16 @@ export const CardContainer = styled.div`
   border-width: 1px;
   margin: 15px 15px;
   background-color: whitesmoke;
+
+  @media only screen and (min-width: 845px) and (max-width: 1024px){
+    height: 340px;
+    width: 300px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 320px;
+    width: 300px;
+  }
 `;
 
 export const CardImage = styled.img.attrs((props) => ({
@@ -17,6 +27,16 @@ export const CardImage = styled.img.attrs((props) => ({
 }))`
   width: 398px;
   height: 300px;
+
+  @media only screen and (min-width: 845px) and (max-width: 1024px){
+    height: 228px;
+    width: 298px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 200px;
+    width: 298px;
+  }
 `;
 
 export const CardInformation = styled.div`

@@ -47,12 +47,14 @@ export const CardInformation = styled.div`
 `;
 
 export const CardName = styled.p`
-  font-size: 18px;
+  font-size: 20px;
+  font-style: italic;
   margin: 2px;
 `;
 
 export const CardPrice = styled.p`
   font-size: 20px;
+  font-style: italic;
   margin: 2px;
 `;
 

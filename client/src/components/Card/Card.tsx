@@ -16,7 +16,7 @@ interface Props {
 export default function Card({ product }: Props) {
   return (
     <CardContainer>
-      <CardImage src={product.pictureUrl} alt={product.name} />
+      <CardImage src={product.imageUrl} alt={product.name} />
       <CardInformation>
         <CardName>{product.name}</CardName>
         <CardPrice>${product.price}</CardPrice>

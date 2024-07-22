@@ -15,11 +15,11 @@ export const GridContainer = styled.div`
   justify-content: center;
   justify-items: center;
 
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1400px) {
     grid-template-columns: 450px 450px 450px;
   }
 
-  @media only screen and (min-width: 845px) and (max-width: 1024px){
+  @media only screen and (min-width: 845px) and (max-width: 1400px){
     grid-template-columns: 450px 450px;
   }
 

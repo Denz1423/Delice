@@ -1,46 +1,26 @@
+import { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import Header from "../../components/header/Header";
 import { GridContainer, MenuContainer } from "./Menu.style";
-
-const dummyProducts = [
-  {
-    id: 1,
-    name: "Tiramisu",
-    price: 12,
-    type: "Cake",
-    pictureUrl: "/images/products/Tiramisu.png",
-  },
-  {
-    id: 2,
-    name: "ChocolateCake",
-    price: 13,
-    type: "Cake",
-    pictureUrl: "/images/products/ChocolateCake.png",
-  },
-];
-
-const aProduct = {
-  id: 1,
-  name: "Tiramisu",
-  price: 12,
-  type: "Cake",
-  pictureUrl: "/images/products/Tiramisu.png",
-};
+import { Product } from "../../models/Product";
+import agent from "../../api/agent";
 
 export default function Menu() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    agent.Products.getAll()
+      .then((products) => setProducts(products))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <MenuContainer>
       <Header />
       <GridContainer>
-        {/* {dummyProducts.map((product) => {
+        {products.map((product) => {
           return <Card key={product.id} product={product} />;
-        })} */}
-        <Card product={aProduct} />
-        <Card product={aProduct} />
-        <Card product={aProduct} />
-        <Card product={aProduct} />
-        <Card product={aProduct} />
-        <Card product={aProduct} />
+        })}
       </GridContainer>
     </MenuContainer>
   );

@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
   display: block;
   width: 400px;
-  height: 430px;
+  height: 480px;
   margin: 15px 15px;
   background-color: whitesmoke;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  @media only screen and (min-width: 845px) and (max-width: 1024px){
+  @media only screen and (min-width: 845px) and (max-width: 1400px){
     width: 300px;
     height: 340px;
   }
@@ -24,9 +24,9 @@ export const CardImage = styled.img.attrs((props) => ({
   alt: props.alt,
 }))`
   width: 400px;
-  height: 300px;
+  height: 350px;
 
-  @media only screen and (min-width: 845px) and (max-width: 1024px){
+  @media only screen and (min-width: 845px) and (max-width: 1400px){
     width: 300px;
     height: 228px;
   }

@@ -1,10 +1,15 @@
-import { HeaderContainer, LogoImage, IconContainer, TableNumberContainer } from "./Header.style";
+import {
+  HeaderContainer,
+  LogoImage,
+  IconContainer,
+  TableNumberContainer,
+} from "./Header.style";
 import Delice from "../../assets/Delice.svg";
 import ShoppingIcon from "../cart-icon/ShoppingIcon";
 import { useParams } from "react-router-dom";
 
 export default function Header() {
-  const { tableNumber } = useParams();
+  const { tableNumber } = useParams<{ tableNumber: string }>();
 
   return (
     <HeaderContainer>

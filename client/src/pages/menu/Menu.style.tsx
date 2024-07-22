@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const MenuContainer = styled.div`
   height: 100%;
   width: 100%;
-  background-color: #cecece;
+  /* background-color: #cecece; */
+  background-color: whitesmoke;
 `;
 
 export const GridContainer = styled.div`

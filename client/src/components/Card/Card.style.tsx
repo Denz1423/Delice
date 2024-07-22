@@ -2,22 +2,20 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   display: block;
-  height: 430px;
   width: 400px;
-  /* border-radius: 20px; */
-  border-style: solid;
-  border-width: 1px;
+  height: 430px;
   margin: 15px 15px;
   background-color: whitesmoke;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   @media only screen and (min-width: 845px) and (max-width: 1024px){
-    height: 340px;
     width: 300px;
+    height: 340px;
   }
 
   @media only screen and (max-width: 600px) {
-    height: 320px;
     width: 300px;
+    height: 320px;
   }
 `;
 
@@ -25,17 +23,17 @@ export const CardImage = styled.img.attrs((props) => ({
   src: props.src,
   alt: props.alt,
 }))`
-  width: 398px;
+  width: 400px;
   height: 300px;
 
   @media only screen and (min-width: 845px) and (max-width: 1024px){
+    width: 300px;
     height: 228px;
-    width: 298px;
   }
 
   @media only screen and (max-width: 600px) {
+    width: 300px;
     height: 200px;
-    width: 298px;
   }
 `;
 

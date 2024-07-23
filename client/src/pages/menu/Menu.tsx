@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Card from "../../components/Card/Card";
 import Header from "../../components/header/Header";
 import { GridContainer, MenuContainer } from "./Menu.style";
-import { Product } from "../../models/Product";
-import agent from "../../api/agent";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { fetchProductsAsync, productSelectors } from "./MenuSlice";
 
 export default function Menu() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const dispatch = useAppDispatch();
+  const products = useAppSelector(productSelectors.selectAll);
+  const { productsLoaded } = useAppSelector((state) => state.menu);
 
   useEffect(() => {
-    agent.Products.getAll()
-      .then((products) => setProducts(products))
-      .catch((err) => console.log(err));
-  }, []);
+    if (!productsLoaded) dispatch(fetchProductsAsync());
+  }, [dispatch, productsLoaded]);
 
   return (
     <MenuContainer>

@@ -1,7 +1,12 @@
-import { CartIconContainer, ItemCount, StyledShoppingIcon } from "./ShoppingIcon.style";
+import { useAppSelector } from "../../store/hooks";
+import {
+  CartIconContainer,
+  ItemCount,
+  StyledShoppingIcon,
+} from "./ShoppingIcon.style";
 
 export default function ShoppingIcon() {
-  const cartCount = 7;
+  const cartCount = useAppSelector((state) => state.cart.cart?.products.length);
   return (
     <CartIconContainer>
       <StyledShoppingIcon

@@ -5,7 +5,7 @@ import {
   TableNumberContainer,
 } from "./Header.style";
 import Delice from "../../assets/Delice.svg";
-import ShoppingIcon from "../cart-icon/ShoppingIcon";
+import ShoppingIcon from "../cart/ShoppingIcon";
 import { useParams } from "react-router-dom";
 
 export default function Header() {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledShoppingIcon = styled.svg`
-  height: 40px;
+  height: 45px;
   width: auto;
   fill: #f8f4e1;
 `;
@@ -9,7 +9,7 @@ export const StyledShoppingIcon = styled.svg`
 export const ItemCount = styled.span`
   color: #423124;
   position: absolute;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   top: 8px;
 `;

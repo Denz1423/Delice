@@ -1,5 +1,7 @@
 import { Product } from "../../models/Product";
+import { useAppDispatch } from "../../store/hooks";
 import { ProductCardButton } from "../button/Button.style";
+import { addProductToCart } from "../cart/CartSlice";
 import {
   CardContainer,
   CardFooter,
@@ -14,6 +16,8 @@ interface Props {
 }
 
 export default function Card({ product }: Props) {
+  const dispatch = useAppDispatch();
+
   return (
     <CardContainer>
       <CardImage src={product.imageUrl} alt={product.name} />
@@ -22,7 +26,11 @@ export default function Card({ product }: Props) {
         <CardPrice>${product.price}</CardPrice>
       </CardInformation>
       <CardFooter>
-        <ProductCardButton>Add item</ProductCardButton>
+        <ProductCardButton
+          onClick={() => dispatch(addProductToCart({ product }))}
+        >
+          Add item
+        </ProductCardButton>
       </CardFooter>
     </CardContainer>
   );

@@ -14,7 +14,7 @@ export const fetchProductsAsync = createAsyncThunk<Product[]>("menu/fetchProduct
     }
 });
 
-//Reducere
+//Reducers
 export const menuSlice = createSlice({
     name: 'menu',
     initialState: productsAdapter.getInitialState({

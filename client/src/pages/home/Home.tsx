@@ -26,7 +26,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<FormInputs> = ({ tableNumber }) =>
-    navigate("/menu/" + tableNumber);
+    navigate(tableNumber + "/menu");
 
   return (
       <HomeContainer>

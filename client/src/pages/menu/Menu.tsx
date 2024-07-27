@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Card from "../../components/Card/Card";
-import Header from "../../components/header/Header";
+
 import { GridContainer, MenuContainer } from "./Menu.style";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchProductsAsync, productSelectors } from "./MenuSlice";
@@ -16,7 +16,6 @@ export default function Menu() {
 
   return (
     <MenuContainer>
-      <Header />
       <GridContainer>
         {products.map((product) => {
           return <Card key={product.id} product={product} />;

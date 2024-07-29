@@ -7,7 +7,12 @@ import {
 } from "./ShoppingIcon.style";
 
 export default function ShoppingIcon() {
-  const cartCount = useAppSelector((state) => state.cart.cart?.products.length);
+  const cartProducts = useAppSelector((state) => state.cart.cart?.products);
+  const cartCount =
+    cartProducts?.reduce(
+      (total, product) => total + (product.quantity || 0),
+      0
+    ) || 0;
   const navigate = useNavigate();
 
   return (

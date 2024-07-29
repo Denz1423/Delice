@@ -16,6 +16,7 @@ export const LogoImage = styled.img.attrs((props) => ({
   width: 150px;
   margin: 5px 10px;
   fill: white;
+  cursor: pointer;
 `;
 
 export const IconContainer = styled.div`
@@ -28,5 +29,5 @@ export const IconContainer = styled.div`
 
 export const TableNumberContainer = styled.span`
   font-size: 24px;
-  color: #f8f4e1;;
-`
+  color: #f8f4e1;
+`;

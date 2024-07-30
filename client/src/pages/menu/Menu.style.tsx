@@ -5,6 +5,19 @@ export const MenuContainer = styled.div`
   width: 100%;
   /* background-color: #cecece; */
   background-color: whitesmoke;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const GridContainer = styled.div`
@@ -19,7 +32,7 @@ export const GridContainer = styled.div`
     grid-template-columns: 450px 450px 450px;
   }
 
-  @media only screen and (min-width: 845px) and (max-width: 1400px){
+  @media only screen and (min-width: 845px) and (max-width: 1400px) {
     grid-template-columns: 450px 450px;
   }
 

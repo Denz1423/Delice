@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAppSelector } from "../../store/hooks";
 import {
   CartIconContainer,
@@ -14,9 +14,10 @@ export default function ShoppingIcon() {
       0
     ) || 0;
   const navigate = useNavigate();
+  const { tableNumber } = useParams<{ tableNumber: string }>();
 
   return (
-    <CartIconContainer onClick={() => navigate("summary")}>
+    <CartIconContainer onClick={() => navigate(`/${tableNumber}/summary`)}>
       <StyledShoppingIcon
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

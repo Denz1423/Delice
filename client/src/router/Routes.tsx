@@ -11,15 +11,15 @@ export const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "*",
-    element: <Error404 />,
-  },
-  {
     path: ":tableNumber",
     element: <Header />,
     children: [
       { path: "menu", element: <Menu /> },
       { path: "summary", element: <Summary /> },
     ],
+  },
+  {
+    path: "*",
+    element: <Error404 />,
   },
 ]);

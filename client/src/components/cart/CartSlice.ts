@@ -3,7 +3,6 @@ import { Cart } from "../../models/Cart";
 
 interface CartState {
     cart: Cart | null;
-    status: string
 }
 
 const getInitialCartState = (): CartState => {
@@ -14,7 +13,6 @@ const getInitialCartState = (): CartState => {
     }
     return {
         cart: initialCart,
-        status: 'idle'
     };
 };
 
@@ -22,9 +20,9 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState: getInitialCartState,
     reducers: {
-        setCart: (state, action) => {
-            state.cart = action.payload.product;
-        },
+        // setCart: (state, action) => {
+        //     state.cart = action.payload.product;
+        // },
         clearCart: (state) => {
             state.cart = null;
         },
@@ -37,8 +35,20 @@ export const cartSlice = createSlice({
                 existingProduct ? existingProduct.quantity++ : state.cart.products.push({ ...product, quantity: 1 });
             }
             localStorage.setItem("cart", JSON.stringify(state.cart));
+        },
+        removeProductFromCart: (state, action) => {
+            const productId  = action.payload;
+            const productIndex = state.cart?.products.findIndex((item) => item.id === productId);
+
+            if (productIndex === -1 || productIndex === undefined) return;
+
+            state.cart!.products[productIndex].quantity--;
+
+            if (state.cart?.products[productIndex].quantity === 0) {
+                state.cart.products.splice(productIndex, 1);
+            }
         }
     }
 });
 
-export const { setCart, clearCart, addProductToCart } = cartSlice.actions;
+export const { clearCart, addProductToCart, removeProductFromCart } = cartSlice.actions;

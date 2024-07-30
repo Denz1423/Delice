@@ -18,7 +18,7 @@ export default function Header() {
         <LogoImage
           src={Delice}
           alt="Delice-logo"
-          onClick={() => navigate("menu")}
+          onClick={() => navigate(`/${tableNumber}/menu`)}
         />
         <IconContainer>
           <TableNumberContainer>Table {tableNumber}</TableNumberContainer>

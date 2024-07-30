@@ -30,4 +30,5 @@ export const IconContainer = styled.div`
 export const TableNumberContainer = styled.span`
   font-size: 24px;
   color: #f8f4e1;
+  margin-right: 10px;
 `;

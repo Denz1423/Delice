@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../store/hooks";
 import {
   CartIconContainer,
@@ -14,7 +14,7 @@ export default function ShoppingIcon() {
       0
     ) || 0;
   const navigate = useNavigate();
-  const { tableNumber } = useParams<{ tableNumber: string }>();
+  const tableNumber = useAppSelector((state) => state.table);
 
   return (
     <CartIconContainer onClick={() => navigate(`/${tableNumber}/summary`)}>

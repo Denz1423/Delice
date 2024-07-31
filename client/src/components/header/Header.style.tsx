@@ -14,6 +14,7 @@ export const LogoImage = styled.img.attrs((props) => ({
   src: props.src,
 }))`
   width: 150px;
+  height: 100px;
   margin: 5px 10px;
   fill: white;
   cursor: pointer;

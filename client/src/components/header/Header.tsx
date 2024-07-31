@@ -6,10 +6,11 @@ import {
 } from "./Header.style";
 import Delice from "../../assets/Delice.svg";
 import ShoppingIcon from "../cart/ShoppingIcon";
-import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../store/hooks";
 
 export default function Header() {
-  const { tableNumber } = useParams<{ tableNumber: string }>();
+  const tableNumber = useAppSelector((state) => state.tableNumber);
   const navigate = useNavigate();
 
   return (

@@ -24,6 +24,7 @@ export const cartSlice = createSlice({
         //     state.cart = action.payload.product;
         // },
         clearCart: (state) => {
+            localStorage.removeItem("cart");
             state.cart = null;
         },
         addProductToCart: (state, action) => {
@@ -37,7 +38,7 @@ export const cartSlice = createSlice({
             localStorage.setItem("cart", JSON.stringify(state.cart));
         },
         removeProductFromCart: (state, action) => {
-            const productId  = action.payload;
+            const productId = action.payload;
             const productIndex = state.cart?.products.findIndex((item) => item.id === productId);
 
             if (productIndex === -1 || productIndex === undefined) return;
@@ -47,6 +48,7 @@ export const cartSlice = createSlice({
             if (state.cart?.products[productIndex].quantity === 0) {
                 state.cart.products.splice(productIndex, 1);
             }
+            localStorage.setItem("cart", JSON.stringify(state.cart));
         }
     }
 });

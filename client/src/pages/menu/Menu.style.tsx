@@ -3,21 +3,7 @@ import styled from "styled-components";
 export const MenuContainer = styled.div`
   height: 100%;
   width: 100%;
-  /* background-color: #cecece; */
-  background-color: whitesmoke;
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  @keyframes fadeInAnimation {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
+  /* background-color: #f5f5f5; */
 `;
 
 export const GridContainer = styled.div`

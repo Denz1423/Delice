@@ -12,6 +12,9 @@ import DeliceLogo from "/Delice-circle.png";
 import { HomeButton } from "../../components/button/Button.style";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../store/hooks";
+import { setTableNumber } from "../../components/header/HeaderSlice";
+import { clearCart } from "../../components/cart/CartSlice";
 
 type FormInputs = {
   tableNumber: number;
@@ -24,9 +27,13 @@ export default function Home() {
     formState: { errors },
   } = useForm<FormInputs>();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const onSubmit: SubmitHandler<FormInputs> = ({ tableNumber }) =>
+  const onSubmit: SubmitHandler<FormInputs> = ({ tableNumber }) => {
+    dispatch(setTableNumber(tableNumber));
+    dispatch(clearCart());
     navigate(`/${tableNumber}/menu`);
+  };
 
   return (
     <HomeContainer>

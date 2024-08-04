@@ -19,7 +19,7 @@ namespace server.Services
             var paymentIntentService = new PaymentIntentService();
 
             var paymentIntent = new PaymentIntent();
-            var subtotal = cart.Items.Sum(item => item.Price * item.Quantity);
+            var subtotal = cart.Items.Sum(item => item.Price * item.Quantity) * 100;
 
             if (string.IsNullOrEmpty(cart.PaymentIntentId))
             {
@@ -29,8 +29,6 @@ namespace server.Services
                     Currency = "nzd",
                 };
                 paymentIntent = await paymentIntentService.CreateAsync(options);
-                cart.PaymentIntentId = paymentIntent.Id;
-                cart.ClientSecret = cart.ClientSecret;
             }
             else
             {

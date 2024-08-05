@@ -39,14 +39,14 @@ namespace server.Controllers
                 PaymentIntentId = cart.PaymentIntentId,
                 ClientSecret = cart.ClientSecret,
                 Products = cart
-                    .Items.Select(item => new CartProductDto
+                    .Products.Select(product => new CartProductDto
                     {
-                        ProductId = item.Id,
-                        Name = item.Name,
-                        Price = item.Price,
-                        PictureUrl = item.PictureUrl,
-                        Type = item.Type,
-                        Quantity = item.Quantity
+                        ProductId = product.Id,
+                        Name = product.Name,
+                        Price = product.Price,
+                        ImageUrl = product.ImageUrl,
+                        Type = product.Type,
+                        Quantity = product.Quantity
                     })
                     .ToList()
             };

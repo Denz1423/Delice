@@ -10,6 +10,7 @@ export interface CartProduct {
 
 export interface Cart {
     products: CartProduct[];
+    tableNumber? : number;
     paymentIntentId?: string;
     clientSecret?: string;
 }

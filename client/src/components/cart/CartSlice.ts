@@ -20,9 +20,9 @@ export const cartSlice = createSlice({
     name: 'cart',
     initialState: getInitialCartState,
     reducers: {
-        // setCart: (state, action) => {
-        //     state.cart = action.payload.product;
-        // },
+        setCart: (state, action) => {
+            state.cart = action.payload;
+        },
         clearCart: (state) => {
             localStorage.removeItem("cart");
             state.cart = null;
@@ -53,4 +53,4 @@ export const cartSlice = createSlice({
     }
 });
 
-export const { clearCart, addProductToCart, removeProductFromCart } = cartSlice.actions;
+export const { clearCart, addProductToCart, removeProductFromCart, setCart } = cartSlice.actions;

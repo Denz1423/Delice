@@ -13,8 +13,13 @@ const Products = {
     getAll: () => requests.get('products')
 }
 
+const Payments = {
+    createPaymentIntent: (cart: object) => requests.post('payment', cart)
+}
+
 const agent = {
-    Products
+    Products,
+    Payments
 }
 
 export default agent;

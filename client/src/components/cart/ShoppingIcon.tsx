@@ -14,7 +14,7 @@ export default function ShoppingIcon() {
       0
     ) || 0;
   const navigate = useNavigate();
-  const tableNumber = useAppSelector((state) => state.table);
+  const tableNumber = useAppSelector((state) => state.tableNumber);
 
   return (
     <CartIconContainer onClick={() => navigate(`/${tableNumber}/summary`)}>

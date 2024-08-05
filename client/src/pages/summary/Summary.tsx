@@ -30,7 +30,7 @@ export default function Summary() {
       </center>
       <SummaryContainer>
         <ProductsContainer>
-          {cart?.products.length !== 0 ? (
+          {cart && cart?.products.length !== 0 ? (
             cart?.products.map((product) => {
               return (
                 <ItemContainer key={product.id}>
@@ -92,7 +92,7 @@ export default function Summary() {
             </EmptyCartContainer>
           )}
         </ProductsContainer>
-        {cart!.products.length > 0 && (
+        {cart && cart.products.length > 0 && (
           <TotalContainer>
             <span>
               Total: $
@@ -100,6 +100,7 @@ export default function Summary() {
                 return sum + product.price * product.quantity;
               }, 0)}
             </span>
+            <button onClick={() => navigate(`/${tableNumber}/checkout`)}>Checkout</button>
           </TotalContainer>
         )}
       </SummaryContainer>

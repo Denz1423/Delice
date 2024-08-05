@@ -19,7 +19,7 @@ namespace server.Services
             var paymentIntentService = new PaymentIntentService();
 
             var paymentIntent = new PaymentIntent();
-            var subtotal = cart.Items.Sum(item => item.Price * item.Quantity) * 100;
+            var subtotal = cart.Products.Sum(item => item.Price * item.Quantity) * 100;
 
             if (string.IsNullOrEmpty(cart.PaymentIntentId))
             {

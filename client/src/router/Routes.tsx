@@ -4,6 +4,7 @@ import Menu from "../pages/menu/Menu";
 import Error404 from "../pages/error/Error404";
 import Header from "../components/header/Header";
 import Summary from "../pages/summary/Summary";
+import CheckoutWrapper from "../components/checkout/CheckoutWrapper";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     children: [
       { path: "menu", element: <Menu /> },
       { path: "summary", element: <Summary /> },
+      { path: "checkout", element: <CheckoutWrapper /> },
     ],
   },
   {

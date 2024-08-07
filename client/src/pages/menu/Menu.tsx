@@ -3,8 +3,8 @@ import Card from "../../components/Card/Card";
 
 import { GridContainer, MenuContainer } from "./Menu.style";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { fetchProductsAsync, productSelectors } from "./MenuSlice";
-import { FadeIn } from "../../components/util/Fade";
+import { fetchProductsAsync, productSelectors } from "../../services/state/MenuSlice";
+import { FadeIn } from "../../components/ui/Fade";
 
 export default function Menu() {
   const dispatch = useAppDispatch();

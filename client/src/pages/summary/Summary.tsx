@@ -3,7 +3,7 @@ import { HomeButton } from "../../components/button/Button.style";
 import {
   addProductToCart,
   removeProductFromCart,
-} from "../../components/cart/CartSlice";
+} from "../../services/state/CartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   EmptyCartContainer,
@@ -15,7 +15,7 @@ import {
   SummaryProductInformationContainer,
   TotalContainer,
 } from "./Summary.style";
-import { FadeIn } from "../../components/util/Fade";
+import { FadeIn } from "../../components/ui/Fade";
 
 export default function Summary() {
   const cart = useAppSelector((state) => state.cart.cart);

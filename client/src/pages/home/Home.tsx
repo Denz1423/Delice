@@ -13,8 +13,8 @@ import { HomeButton } from "../../components/button/Button.style";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../store/hooks";
-import { setTableNumber } from "../../components/header/HeaderSlice";
-import { clearCart } from "../../components/cart/CartSlice";
+import { setTableNumber } from "../../services/state/HeaderSlice";
+import { clearCart } from "../../services/state/CartSlice";
 
 type FormInputs = {
   tableNumber: number;

@@ -1,7 +1,7 @@
 import { Product } from "../../models/Product";
 import { useAppDispatch } from "../../store/hooks";
 import { ProductCardButton } from "../button/Button.style";
-import { addProductToCart } from "../cart/CartSlice";
+import { addProductToCart } from "../../services/state/CartSlice";
 import {
   CardContainer,
   CardFooter,

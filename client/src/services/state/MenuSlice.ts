@@ -1,5 +1,5 @@
 import { createAsyncThunk, createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import agent from "../../api/agent";
+import agent from "../api/agent";
 import { Product } from "../../models/Product";
 import { RootState } from "../../store/store";
 

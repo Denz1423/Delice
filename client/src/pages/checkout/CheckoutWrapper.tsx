@@ -4,7 +4,7 @@ import agent from "../../services/api/agent";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { setCart } from "../../services/state/CartSlice";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "../../pages/checkout/CheckoutForm";
+import CheckoutForm from "./CheckoutForm";
 
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 

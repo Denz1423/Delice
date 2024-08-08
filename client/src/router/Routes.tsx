@@ -19,8 +19,11 @@ export const router = createBrowserRouter([
       { path: "menu", element: <Menu /> },
       { path: "summary", element: <Summary /> },
       { path: "checkout", element: <CheckoutWrapper /> },
-      { path: "success", element: <CheckoutSucess /> },
     ],
+  },
+  {
+    path: "success",
+    element: <CheckoutSucess />,
   },
   {
     path: "*",

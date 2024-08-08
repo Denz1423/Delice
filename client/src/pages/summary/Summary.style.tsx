@@ -23,6 +23,7 @@ export const TotalContainer = styled.div`
   height: 500px;
   font-size: 24px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 

@@ -59,3 +59,47 @@ export const ProductCardButton = styled.button`
     transition: 0.2s ease all;
   }
 `;
+
+export const PaymentButton = styled.button`
+  background: #423124;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  border-radius: 4px;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  transition: all 0.2s ease;
+  box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+  width: 290px;
+
+  &:hover {
+    filter: contrast(140%);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+`;
+
+export const CheckoutButton = styled.button`
+  background-color: #423124;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  text-align: center;
+
+  &:hover {
+    background-color: #5b4c43;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+`;

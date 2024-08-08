@@ -4,39 +4,24 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import { StripePaymentElementOptions } from "@stripe/stripe-js";
-import { StripeContainer } from "./CheckoutForm.style";
+import {
+  CloseButton,
+  PaymentMessage,
+  StripeContainer,
+} from "./CheckoutForm.style";
 import { useAppSelector } from "../../store/hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { Spinner } from "../../components/ui/Spinner";
+import { PaymentButton } from "../../components/button/Button.style";
+import { selectCartTotal } from "../../services/state/CartSelectors";
+import { TotalCost } from "../../components/ui/Total";
 
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
-  const tableNumber = useAppSelector((state) => state.tableNumber);
-  const clientSecret = useAppSelector((state) => state.cart.cart?.clientSecret);
+  const totalCart = useAppSelector(selectCartTotal);
+  const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<string | undefined>("");
-
-  // useEffect(() => {
-  //   if (!stripe || !clientSecret) {
-  //     return;
-  //   }
-  
-  //   stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-  //     switch (paymentIntent!.status) {
-  //       case "succeeded":
-  //         setMessage("Payment succeeded!");
-  //         break;
-  //       case "processing":
-  //         setMessage("Your payment is processing.");
-  //         break;
-  //       case "requires_payment_method":
-  //         setMessage("Your payment was not successful, please try again.");
-  //         break;
-  //       default:
-  //         setMessage("Something went wrong.");
-  //         break;
-  //     }
-  //   });
-  // }, [clientSecret, stripe]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handlePaymentSubmission = async (
@@ -47,11 +32,12 @@ export default function CheckoutForm() {
     if (!stripe || !elements) {
       return;
     }
+    setIsLoading(true);
 
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `http://localhost:5173/${tableNumber}/success`,
+        return_url: `http://localhost:5173/success`,
       },
     });
 
@@ -60,6 +46,11 @@ export default function CheckoutForm() {
     } else {
       setMessage("An unexpected error occurred.");
     }
+    setIsLoading(false);
+  };
+
+  const handleCloseMessage = () => {
+    setMessage("");
   };
 
   const paymentElementOptions: StripePaymentElementOptions = {
@@ -74,10 +65,22 @@ export default function CheckoutForm() {
   return (
     <>
       <form onSubmit={handlePaymentSubmission}>
-        {message && <div>{message}</div>}
+        {message && (
+          <PaymentMessage>
+            {message}
+            <CloseButton onClick={handleCloseMessage}>&times;</CloseButton>
+          </PaymentMessage>
+        )}
+
         <StripeContainer>
-          <PaymentElement options={paymentElementOptions} />
-          <button>Pay now</button>
+          <TotalCost>Total: ${totalCart}</TotalCost>
+          <PaymentElement
+            id="payment-element"
+            options={paymentElementOptions}
+          />
+          <PaymentButton disabled={isLoading || !stripe || !elements}>
+            {isLoading ? <Spinner /> : "Pay now"}
+          </PaymentButton>
         </StripeContainer>
       </form>
     </>

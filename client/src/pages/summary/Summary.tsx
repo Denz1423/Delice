@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { HomeButton } from "../../components/button/Button.style";
+import { CheckoutButton, HomeButton } from "../../components/button/Button.style";
 import {
   addProductToCart,
   removeProductFromCart,
@@ -16,10 +16,13 @@ import {
   TotalContainer,
 } from "./Summary.style";
 import { FadeIn } from "../../components/ui/Fade";
+import { selectCartTotal } from "../../services/state/CartSelectors";
+import { TotalCost } from "../../components/ui/Total";
 
 export default function Summary() {
   const cart = useAppSelector((state) => state.cart.cart);
   const tableNumber = useAppSelector((state) => state.tableNumber);
+  const totalCart = useAppSelector(selectCartTotal);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -94,13 +97,10 @@ export default function Summary() {
         </ProductsContainer>
         {cart && cart.products.length > 0 && (
           <TotalContainer>
-            <span>
-              Total: $
-              {cart?.products.reduce((sum, product) => {
-                return sum + product.price * product.quantity;
-              }, 0)}
-            </span>
-            <button onClick={() => navigate(`/${tableNumber}/checkout`)}>Checkout</button>
+            <TotalCost>Total: ${totalCart}</TotalCost>
+            <CheckoutButton onClick={() => navigate(`/${tableNumber}/checkout`)}>
+              Checkout
+            </CheckoutButton>
           </TotalContainer>
         )}
       </SummaryContainer>

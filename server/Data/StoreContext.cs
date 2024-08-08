@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using server.Entities;
+using server.Entities.Order;
 
 namespace server.Data
 {
@@ -9,5 +10,6 @@ namespace server.Data
             : base(options) { }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

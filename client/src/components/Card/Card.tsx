@@ -17,10 +17,11 @@ interface Props {
 
 export default function Card({ product }: Props) {
   const dispatch = useAppDispatch();
+  const imageSource = import.meta.env.VITE_AWS_IMAGES;
 
   return (
     <CardContainer>
-      <CardImage src={product.imageUrl} alt={product.name} />
+      <CardImage src={imageSource + product.imageUrl} alt={product.name} />
       <CardInformation>
         <CardName>{product.name}</CardName>
         <CardPrice>${product.price}</CardPrice>

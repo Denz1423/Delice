@@ -15,49 +15,49 @@ namespace server.Data
                 {
                     Name = "Tiramisu",
                     Price = 12.00,
-                    ImageUrl = "/images/products/Tiramisu.png",
+                    ImageUrl = "Tiramisu.png",
                     Type = "Cake",
                 },
                 new()
                 {
                     Name = "ChocolateCake",
                     Price = 10.00,
-                    ImageUrl = "/images/products/ChocolateCake.png",
+                    ImageUrl = "ChocolateCake.png",
                     Type = "Cake",
                 },
                 new()
                 {
                     Name = "GreenTeaCake",
                     Price = 11.00,
-                    ImageUrl = "/images/products/GreenTeaCake.png",
+                    ImageUrl = "GreenTeaCake.png",
                     Type = "Cake",
                 },
                 new()
                 {
                     Name = "OreoCake",
                     Price = 12.00,
-                    ImageUrl = "/images/products/OreoCake.png",
+                    ImageUrl = "OreoCake.png",
                     Type = "Cake",
                 },
                 new()
                 {
                     Name = "RedVelvetCake",
                     Price = 13.00,
-                    ImageUrl = "/images/products/RedVelvetCake.png",
+                    ImageUrl = "RedVelvetCake.png",
                     Type = "Cake",
                 },
                 new()
                 {
                     Name = "CarrotCake",
                     Price = 11.00,
-                    ImageUrl = "/images/products/CarrotCake.png",
+                    ImageUrl = "CarrotCake.png",
                     Type = "Cake",
                 },
                 new()
                 {
                     Name = "Macaroon",
                     Price = 13.00,
-                    ImageUrl = "/images/products/Macaroon.png",
+                    ImageUrl = "Macaroon.png",
                     Type = "Cake",
                 },
             };
